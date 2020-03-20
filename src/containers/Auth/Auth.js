@@ -44,12 +44,12 @@ export default class Auth extends Component {
       returnSecureToken: true
     }
     try {
-      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDy4hSQL1NAGRZ_d30Tr4cMJyeFEQPlfh8', authData)
+      const response = await axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBRj1R0UEHzbzdDaOOQIhjqWUvDsusN4Mo', authData)
+
       console.log(response.data)
-    }catch (e) {
+    } catch (e) {
       console.log(e)
     }
-
   }
 
   registerHandler = async () => {
@@ -59,12 +59,12 @@ export default class Auth extends Component {
       returnSecureToken: true
     }
     try {
-     const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDy4hSQL1NAGRZ_d30Tr4cMJyeFEQPlfh8', authData)
+      const response = await axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBRj1R0UEHzbzdDaOOQIhjqWUvDsusN4Mo', authData)
+
       console.log(response.data)
-    }catch (e) {
+    } catch (e) {
       console.log(e)
     }
-
   }
 
   submitHandler = event => {
